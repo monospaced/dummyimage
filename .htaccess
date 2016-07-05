@@ -1,0 +1,11 @@
+Options All -Indexes
+IndexIgnore *
+
+RewriteEngine On
+Options +FollowSymlinks
+RewriteRule ^([A-Za-z0-9-]+)/?$ /code.php?x=$1 [L]
+
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh|db|epp)$">
+ Order Allow,Deny
+ Deny from all
+</FilesMatch>
